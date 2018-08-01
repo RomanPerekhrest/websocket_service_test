@@ -55,7 +55,7 @@ Open that file in multiple browser tabs or windows (or different browsers).
 The one of possible simple ways to run the file in 3 firefox tabs:  
 `for i in {1..3}; do firefox --new-tab ws_client.html & done`
 
-Start writing messages in different tabs/windows (there will be a textbox) and watch how websocket communication(notification) is synchronized.  
+Start writing messages in different tabs/windows (there will be a textbox) and watch how websocket communication(notification) gets synchronized.  
 
 To stop and run the service use `./stop_ws_service.sh` and `./run_ws_service.sh` respectively.
 
