@@ -33,6 +33,7 @@ Creating service ws_service_web
 You may observe all running websocket server and redis instances with:  
 `docker service ps ws_service_web ws_service_redis`  
 (the number of websocket server instances defaults to `7`)  
+
 To scale in/out the service you could specify:  
 `docker service scale ws_service_web=<number_of_replicas>`  
 
@@ -43,6 +44,7 @@ The one of possible simple ways to run the file in 3 firefox tabs:
 `for i in {1..3}; do firefox --new-tab ws_client.html & done`
 
 Start writing messages in different tabs/windows (there will be a textbox) and watch how websocket communication(notification) is synchronized.  
+
 To stop and run the service use `./stop_ws_service.sh` and `./run_ws_service.sh` respectively.
 
 
