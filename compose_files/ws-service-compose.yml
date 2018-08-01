@@ -1,0 +1,34 @@
+version: "3"
+services:
+  web:
+    # image name matches the prebuilt image's name ("ws_server")
+    image: ws_server
+    deploy:
+      replicas: 7
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 55M
+    ports:
+      - "127.0.0.1:5995:5995"
+    depends_on:
+      - redis
+    networks:
+      - ws_net
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - "../data:/data"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    command: redis-server
+    hostname: redis
+    networks:
+      - ws_net
+networks:
+  ws_net:

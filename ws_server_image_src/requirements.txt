@@ -1,0 +1,4 @@
+aredis
+websockets
+googletrans
+
