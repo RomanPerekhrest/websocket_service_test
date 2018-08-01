@@ -33,6 +33,18 @@ Creating service ws_service_web
 You may observe all running websocket server and redis instances with:  
 `docker service ps ws_service_web ws_service_redis`  
 (the number of websocket server instances defaults to `7`)  
+The output should look similar to the following:
+```
+ID                  NAME                 IMAGE               NODE                DESIRED STATE       CURRENT STATE         ERROR               PORTS
+kctdsl6ehnet        ws_service_web.1     ws_server:latest    roman               Running             Running 8 hours ago                       
+ybplzdfu5juu        ws_service_redis.1   redis:latest        roman               Running             Running 8 hours ago                       
+uh0zkgkgrew6        ws_service_web.2     ws_server:latest    roman               Running             Running 8 hours ago                       
+2ongwqpl956s        ws_service_web.3     ws_server:latest    roman               Running             Running 8 hours ago                       
+b24tdxjdjdws        ws_service_web.4     ws_server:latest    roman               Running             Running 8 hours ago                       
+0t3rkeuwxgme        ws_service_web.5     ws_server:latest    roman               Running             Running 8 hours ago                       
+4n9vrv6fpi0h        ws_service_web.6     ws_server:latest    roman               Running             Running 8 hours ago                       
+omb9bg0k9bg5        ws_service_web.7     ws_server:latest    roman               Running             Running 8 hours ago 
+```
 
 To scale in/out the service you could specify:  
 `docker service scale ws_service_web=<number_of_replicas>`  
